@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+ void checkIfNewBiggerWord (string &word, string &biggestWord)
+ {
+       if (word.size()>biggestWord.size())
+            biggestWord = word;
+       };
+
+
+string LongestWord(string sen)
+{
+
+    string biggestWord;
+    string currentWord;
+
+
+    for(int i = 0; i<sen.size(); i++)
+    {
+        char c = sen[i];
+        if (c == ' ')
+        {
+            checkIfNewBiggerWord(currentWord, biggestWord);
+            currentWord = "";
+            continue;
+        }
+        if ((c<'a' || c > 'z') && (c<'0' || c > '9'))
+            continue;
+        currentWord += c;
+    }
+
+    checkIfNewBiggerWord(currentWord, biggestWord);
+    // code goes here
+    return biggestWord;
+
+}
+
+
+int main() { 
+  
+  // keep this function call here
+  cout << LongestWord(gets(stdin));
+  return 0;
+    
+}
