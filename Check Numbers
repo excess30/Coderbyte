@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+string CheckNums(int num1, int num2) { 
+
+  // code goes here   
+  return num1<num2?"true":(num1==num2?"-1":"false"); 
+            
+}
+
+int main() { 
+  
+  // keep this function call here
+  cout << CheckNums(gets(stdin));
+  return 0;
+    
+}
